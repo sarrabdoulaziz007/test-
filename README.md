@@ -1,17 +1,8 @@
 # test-
-import tensorflow as tf
-print(tf.test.is_built_with_cuda())
-GPU=tf.config.experimental.list_physical_devices('GPU')
-print("Num GPUs Available: ", len(GPU))
-if GPU:
-    try:
-        for gpu in GPU:
-            tf.config.experimental.set_memory_growth(gpu, True)
-        print("Memory growth set for GPU.")
-    except RuntimeError as e:
-        print(e)
-h = tf.constant("Hello")
-w = tf.constant(" World!")
-hw = h+w
-print(hw.numpy().decode("utf-8"))
+# We connect Google Colab to Google Drive, to ensure your notebook (the .ipynb file) is saved and accessible at any time for future use or download
+from google.colab import drive
+drive.mount('/content/gdrive')
+# You can create the folder directly in Colab using the command below; you can change the folder -  ex.: '/content/gdrive/MyDrive/Project_1'
+!mkdir -p '/content/gdrive/MyDrive/TF_Project'
+print("Folder created successfully")
 # commentaire
